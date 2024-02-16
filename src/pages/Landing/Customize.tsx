@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useState } from "react";
 import Input from "@components/Input";
 import { CaretRightIcon } from "@radix-ui/react-icons";
@@ -6,16 +5,34 @@ import { updateWaitlist } from "@api/profile";
 import { toast } from "react-hot-toast";
 import Form from "../../components/Form";
 
+const validEmailRegex = RegExp(
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/
+);
+
 const Customize = () => {
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
 
-  const handleJoin = async () => {
+  const validateEmail = (email) => {
     if (!email) {
-      toast.error("Please enter a valid email");
-      return;
+      setEmailError("Email is required");
+      return false;
+    } else if (!validEmailRegex.test(email)) {
+      setEmailError("Email is not valid");
+      return false;
+    } else {
+      setEmailError("");
+      return true;
     }
-    if (email) {
+  };
+
+  const handleJoin = async (e) => {
+    e.preventDefault();
+    if (validateEmail(email)) {
       await updateWaitlist(email);
+      toast.success("Success");
+    } else {
+      toast.error(emailError);
     }
   };
 
@@ -32,9 +49,10 @@ const Customize = () => {
                 <Input
                   label=""
                   value={email}
-                  type="text"
-                  errorMessage={""}
-                  onChange={(e) => setEmail(e)}
+                  type="email"
+                  errorMessage={emailError}
+                  onChange={(e) => setEmail(e.target.value)}
+                  onBlur={() => validateEmail(email)}
                   placeholder="Enter your email"
                 />
                 <button
