@@ -1,19 +1,19 @@
-// @ts-nocheck
 import styles from "./Profile.module.scss";
 import EditorSidebar from "@components/EditorSidebar";
 import Tooltip from "../../components/Tooltip";
 import { useAppSelector } from "@state/index";
-
 import { useDispatch } from "react-redux";
 import { openModal } from "@state/reducers/utils";
 import ProfileHeader from "@components/EditorHeader/ProfileHeader";
 import { QuestionMarkCircledIcon } from "@radix-ui/react-icons";
+import { useTranslation } from "react-i18next";
 
 const EmailLabel = () => {
+  const { t } = useTranslation();
   return (
     <>
-      Email{" "}
-      <Tooltip content="You can't update your email for now, if such issue occurred, please contact us at: support@stylebit.io">
+      {t("profile.email")}{" "}
+      <Tooltip content={t("tooltips.profile.emailHelp")}>
         <QuestionMarkCircledIcon className={styles.questionMark} />
       </Tooltip>
     </>
@@ -23,11 +23,12 @@ const EmailLabel = () => {
 const Profile = () => {
   const dispatch = useDispatch();
   const user = useAppSelector((s) => s.auth.sbUser);
+  const { t } = useTranslation();
 
   return (
     <main>
       <EditorSidebar />
-      <ProfileHeader title="My Profile" />
+      <ProfileHeader title={t("profile.myProfile")} />
       <div className={styles.content}>
         <div className={styles.profileCard}>
           <div className={styles.footer}>
@@ -44,16 +45,14 @@ const Profile = () => {
           <div className={styles.divider}></div>
           <div className={styles.deleteWrap}>
             <p className={styles.descr}>
-              Deleting you account will remove all of your information from our
-              servers, please remember to remove 3rd party account integrations
-              directly from Figma or GitHub.
+              {t("profile.deleteAccountWarning")}
             </p>
             <button
               className={styles.deleteBtn}
               onClick={() => dispatch(openModal("deleteAccountModal"))}
             >
-              <img src={trashIcon} alt="Trash" />
-              Delete account
+              <img src={trashIcon} alt={t("alt.trash")} />
+              {t("profile.deleteAccount")}
             </button>
           </div>
         </div>
