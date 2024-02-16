@@ -1,12 +1,13 @@
-// @ts-nocheck
 import { useAppSelector } from "@state/index";
 import styles from "./AdoptionTimeline.module.scss";
 import { Card, Flex, ScrollArea, Text, Tooltip } from "@radix-ui/themes";
 import { useMemo, useState } from "react";
+import { useIntl } from "react-intl";
 
 const AdoptionTimeline = () => {
   const [statSort, setStatSort] = useState<"newToOld" | "oldToNew">("newToOld");
   const statsToSort = useAppSelector((s) => s.utils.activeProjectStats);
+  const intl = useIntl();
 
   const stats = useMemo(
     () =>
@@ -22,12 +23,11 @@ const AdoptionTimeline = () => {
 
   return (
     <Card size="3">
-      <Text weight="medium">Adoption timeline</Text>
+      <Text weight="medium">{intl.formatMessage({ id: "adoptionTimeline.title" })}</Text>
       <Flex direction="column" gap="1">
         <Flex gap="2" align="center" justify="between">
           <Text size="1" color="gray">
-            Your timeline of project scans, click on them to see individual
-            reports.
+            {intl.formatMessage({ id: "adoptionTimeline.description" })}
           </Text>
         </Flex>
         <ScrollArea scrollbars="horizontal" className={styles.adoptionTimeline}>
@@ -36,7 +36,7 @@ const AdoptionTimeline = () => {
             {stats.map((stat, idx) => (
               <Tooltip
                 key={idx}
-                content={`Scanned on ${new Date(stat.timestamp).toString()}`}
+                content={intl.formatMessage({ id: "adoptionTimeline.tooltip" }, { date: new Date(stat.timestamp).toString() })}
               />
             ))}
           </Flex>
