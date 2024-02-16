@@ -1,5 +1,4 @@
-// @ts-nocheck
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 
 import Form from "../../components/Form";
 import Button from "@components/Button";
@@ -9,12 +8,18 @@ const FinishingUp = () => {
   const [emailInput, setEmailInput] = useState("");
   const [errorMsg, setErrorMessage] = useState("");
 
-  const handleSignIn = async () => {
-    if (!emailInput) {
-      setErrorMessage("* please enter a valid email");
+  const isValidEmail = (email: string) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
+  const handleSignIn = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!isValidEmail(emailInput)) {
+      setErrorMessage("* Please enter a valid email");
       return;
     }
     setErrorMessage("");
+    // Proceed with sign-in logic here
   };
 
   return (
@@ -28,9 +33,10 @@ const FinishingUp = () => {
         <Form id="sign-in-form" onSubmit={handleSignIn}>
           <Input
             label="EMAIL"
+            type="email"
             value={emailInput}
-            onChange={(email) => {
-              setEmailInput(email);
+            onChange={(e) => {
+              setEmailInput(e.target.value);
               setErrorMessage("");
             }}
             errorMessage={errorMsg}
@@ -44,10 +50,10 @@ const FinishingUp = () => {
       <div>
         <a
           href="https://www.youtube.com/watch?v=gGeSZ4fzPcA"
-          target="blank"
-          rel="noopener"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <img src={youtubeImg} alt="youtube-white" />
+          <img src="path/to/youtubeImg.png" alt="youtube-icon" />
         </a>
         <div>Welcome to your digital platform for design Collaboration</div>
       </div>
