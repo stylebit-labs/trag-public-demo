@@ -4,8 +4,6 @@ import Form from "../../components/Form";
 import Button from "@components/Button";
 import Input from "@components/Input";
 
-console.log('hello');
-
 const FinishingUp = () => {
   const [emailInput, setEmailInput] = useState("");
   const [errorMsg, setErrorMessage] = useState("");
