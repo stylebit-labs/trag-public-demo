@@ -13,7 +13,6 @@ const FinishingUp = () => {
   };
 
   const handleSignIn = async (e: FormEvent) => {
-    e.preventDefault();
     if (!isValidEmail(emailInput)) {
       setErrorMessage("* Please enter a valid email");
       return;
