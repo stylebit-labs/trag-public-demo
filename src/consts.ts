@@ -1,10 +1,3 @@
-import * as dotenv from "dotenv";
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config({ path: ".env.local" });
-} else {
-  dotenv.config();
-}
-
 // INFO: predefining env variables in consts are not read properly in cloud function
 export const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
 export const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
