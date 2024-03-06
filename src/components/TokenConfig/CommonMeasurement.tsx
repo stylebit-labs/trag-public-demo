@@ -4,7 +4,6 @@ import Tooltip from "../Tooltip";
 import { QuestionMarkCircledIcon } from "@radix-ui/react-icons";
 import * as Switch from "@radix-ui/react-switch";
 import { CommonData } from "./TokenConfig";
-import styles from "./TokenConfig.module.scss";
 
 type CommonMeasurementProps = {
   data: CommonData;
@@ -15,6 +14,7 @@ export const CommonMeasurement = ({
   data,
   onChange,
 }: CommonMeasurementProps) => {
+  console.log("CommonMeasurement", data);
   return (
     <>
       <span className={styles.info}>

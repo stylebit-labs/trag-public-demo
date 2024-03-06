@@ -7,6 +7,7 @@ import Form from "../../components/Form";
 
 function Landing() {
   const [email, setEmail] = useState("");
+  console.log(email);
 
   const handleJoin = async () => {
     if (!email) {
