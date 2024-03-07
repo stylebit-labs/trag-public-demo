@@ -9,7 +9,7 @@ import {
   RawColor,
   FigmaFailure,
 } from "@stylebit/types";
-import logger from "./logger/cloud-logger";
+import logger from "./logger";
 
 export async function fetchFigma(
   figmaUrl: string,
