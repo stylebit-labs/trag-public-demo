@@ -1,4 +1,5 @@
 import { DFS, DFSCallback, Child } from "@stylebit/types";
+import logger from "./logger";
 
 /**
  *  Depth first search higher order function
@@ -31,7 +32,7 @@ export const dfsHOF = (cb: DFSCallback, map?: Map<string, string>): DFS => {
 };
 
 export const tap = (data: unknown): unknown => {
-  console.log(data);
+  logger.log(data);
   return data;
 };
 
