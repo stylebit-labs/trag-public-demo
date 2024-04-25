@@ -19,7 +19,6 @@ export const getLastCommitSha = async (
   if (sha) {
     Object.assign(params, { until: sha });
   }
-  console.log("sha", sha);
 
   const url = `${API_BASE_URL}/repositories/${owner}/${repo}/commits`;
 
