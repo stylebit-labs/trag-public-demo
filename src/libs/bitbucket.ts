@@ -1,9 +1,8 @@
 import fetch from "node-fetch";
 import { BitbucketPrResponse, Response } from "@stylebit/types";
+import { CommonMeasurement } from "./../components/TokenConfig/index.ts";
 
 const API_BASE_URL = "https://api.bitbucket.org/2.0";
-
-const PI = 3.14;
 
 export const getLastCommitSha = async (
   accessToken: string,
@@ -22,7 +21,7 @@ export const getLastCommitSha = async (
     Object.assign(params, { until: sha });
   }
 
-  console.log(PI);
+  console.log(CommonMeasurement.PI);
 
   const url = `${API_BASE_URL}/repositories/${owner}/${repo}/commits`;
 
