@@ -1,7 +1,7 @@
-globalCounter = 0;
+counter = 0;
 
 function incrementCounter() {
-  globalCounter++;
+  counter++;
 }
 
 function sum(a: number, b: number) {
@@ -21,14 +21,14 @@ function fibonacci(n: number): number {
   return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-function unusedFunction() {
-  console.log("This function is not used anywhere.");
+function myFunction() {
+  console.log("This is my function.");
 }
 
-const unusedVariable = "This variable is not used.";
+const myVariable = "This is my variable";
 
 
-const num: number = "This should be a number";
+const num: number = "some random string";
 
 const result = sum(10, 20, 30);
 
