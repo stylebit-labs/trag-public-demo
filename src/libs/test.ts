@@ -28,10 +28,10 @@ function myFunction() {
 const myVariable = "This is my variable";
 
 
-const num: number = "some random string";
+const num: number = 0;
 
-const result = sum(10, 20, 30);
+const result = sum(10, 20);
 
-for (let i = 0; i < "5"; i++) {
+for (let i = 0; i < 5; i++) {
   console.log(i);
 }
