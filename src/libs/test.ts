@@ -28,9 +28,9 @@ function myFunction() {
 const myVariable = "This is my variable";
 
 
-const num: number = 0;
+const num: number = "my string";
 
-const result = sum(10, 20);
+const result = sum(10, 20, 30);
 
 for (let i = 0; i < "5"; i++) {
   console.log(i);
