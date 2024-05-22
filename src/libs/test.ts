@@ -30,7 +30,7 @@ const myVariable = "This is my variable";
 
 const num: number = "my string";
 
-const result = sum(10, 20, 30);
+const result = sum(10, 20); // fix
 
 for (let i = 0; i < "5"; i++) {
   console.log(i);
