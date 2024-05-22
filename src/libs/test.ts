@@ -31,6 +31,6 @@ const num: number = "This should be a number";
 
 const result = sum(10, 20, 30);
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < "5"; i++) {
   console.log(i);
 }
