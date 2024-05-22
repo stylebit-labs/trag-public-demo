@@ -27,10 +27,10 @@ function unusedFunction() {
 
 const unusedVariable = "This variable is not used.";
 
-const num: number = "This should be a number";
+const num: number = 0; // fix
 
-const result = sum(10, 20, 30);
+const result = sum(10, 20); // ignore
 
-for (let i = 0; i < "5"; i++) {
+for (let i = 0; i < 5; i++) { // fix
   console.log(i);
 }
