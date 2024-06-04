@@ -24,7 +24,6 @@ import styles from "./Repos.module.scss";
 import { Github, Repository, Xmark } from "iconoir-react";
 import { ANALYTICS_TRAG, mixpanel } from "@analytics/mixpanel";
 
-console.log("asdad");
 const Repos = () => {
 	const [searchParams] = useSearchParams();
 	const { pathname } = useLocation();
@@ -275,7 +274,7 @@ const Repos = () => {
 															size="4"
 															color="gray"
 															radius="full"
-															fallback={displayName?.charAt(0) || "🦄"}
+															fallback={displayName?.charAt(0) || "ð¦"}
 															src={getAvatarUrl(
 																project.githubMetadata.connection_id
 															)}
