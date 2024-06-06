@@ -27,7 +27,7 @@ function unusedFunction() {
 
 const unusedVariable = "This variable is not used.";
 
-const num: number = "This should be a number";
+const num: number = 0; // Fixed to match the type
 
 const result = sum(10, 20, 30);
 
