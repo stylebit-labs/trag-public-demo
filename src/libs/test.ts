@@ -22,7 +22,7 @@ function fibonacci(n: number): number {
 }
 
 function unusedFunction() {
-  console.log("This function is not used anywhere.");
+  
 }
 
 const unusedVariable = "This variable is not used.";
