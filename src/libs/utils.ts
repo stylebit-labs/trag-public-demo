@@ -66,7 +66,7 @@ export const wrapKeyIntoBracketsIfNeeded = (key: string): string => {
 };
 
 export const isNumeric = (value: unknown): boolean => {
-  return !isNaN(value as number);
+  return typeof value === 'string' ? !isNaN(parseFloat(value)) && isFinite(Number(value)) : false;
 };
 
 console.log("Wow");
