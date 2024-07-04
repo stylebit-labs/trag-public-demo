@@ -25,12 +25,14 @@ function unusedFunction() {
   console.log("This function is not used anywhere.");
 }
 
+
+
 const unusedVariable = "This variable is not used.";
 
-const num: number = 0;
+const num: number = "This should be a number";
 
-const result = sum(10, 20);
+const result = sum(10, 20, 30);
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < "5"; i++) {
   console.log(i);
 }
