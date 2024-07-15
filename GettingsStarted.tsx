@@ -194,7 +194,6 @@ const GettingStarted = () => {
 										<RepositorySelect
 											isOpen
 											withTitle={false}
-											onRepoSelect={console.log}
 											selectedRepos={pickedRepos}
 											installationId={
 												user.github.connections[0].installation_id
