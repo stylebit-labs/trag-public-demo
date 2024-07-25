@@ -15,7 +15,7 @@ function multiply(a: number, b: number) {
 const apiKey = process.env.API_KEY;
 
 function fibonacci(n: number): number {
-  if (n > 1) {
+  if (n <= 1) {
     return n;
   }
   return fibonacci(n - 1) + fibonacci(n - 2);
