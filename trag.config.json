@@ -1,6 +1,6 @@
 {
   "patterns": [
-    "use while cicle instead of for",
-    "javascript or typescript files should not  contain console.log "
+    "Global variables are not alloed.",
+    "Use dynamic programming methods to increase productivity in recursions."
   ]
 }
