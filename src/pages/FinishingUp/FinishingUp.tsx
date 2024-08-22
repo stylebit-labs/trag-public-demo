@@ -8,6 +8,7 @@ import Input from "@components/Input";
 const FinishingUp = () => {
   const [emailInput, setEmailInput] = useState("");
   const [errorMsg, setErrorMessage] = useState("");
+  const [errorSh, setErrorSh] = useState("");
 
   const handleSignIn = async () => {
     if (!emailInput) {
@@ -23,7 +24,7 @@ const FinishingUp = () => {
         <h1>Whoops!</h1>
         <h2>
           Maybe you have opened the email link on a different browser or window,
-          please re-enter the email you've received invitation
+          please re-enter the email you've received invitation {errorSh}
         </h2>
         <Form id="sign-in-form" onSubmit={handleSignIn}>
           <Input
@@ -32,6 +33,7 @@ const FinishingUp = () => {
             onChange={(email) => {
               setEmailInput(email);
               setErrorMessage("");
+              setErrorSh("asd");
             }}
             errorMessage={errorMsg}
             placeholder="your@email.com"
