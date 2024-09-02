@@ -8,9 +8,6 @@ const AdoptionTimeline = () => {
   const [statSort, setStatSort] = useState<"newToOld" | "oldToNew">("newToOld");
   const statsToSort = useAppSelector((s) => s.utils.activeProjectStats);
 
-  // Sort stats
-  console.log("statsToSort: ", statsToSort);
-
   const stats = useMemo(
     () =>
       [...statsToSort].sort((a, b) => {
