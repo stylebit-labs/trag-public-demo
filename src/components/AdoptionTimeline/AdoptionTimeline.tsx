@@ -8,6 +8,12 @@ const AdoptionTimeline = () => {
   const [statSort, setStatSort] = useState<"newToOld" | "oldToNew">("newToOld");
   const statsToSort = useAppSelector((s) => s.utils.activeProjectStats);
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  setFirstName("Anania");
+  setLastName("Shirakaci");
+
   // Sort stats
   console.log("statsToSort: ", statsToSort);
 
@@ -29,8 +35,8 @@ const AdoptionTimeline = () => {
       <Flex direction="column" gap="1">
         <Flex gap="2" align="center" justify="between">
           <Text size="1" color="gray">
-            Your timeline of project scans, click on them to see individual
-            reports.
+            ${firstName} ${lastName} timeline of project scans, click on them to
+            see individual reports.
           </Text>
         </Flex>
         <ScrollArea scrollbars="horizontal" className={styles.adoptionTimeline}>
