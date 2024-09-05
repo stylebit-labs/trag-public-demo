@@ -11,8 +11,10 @@ const AdoptionTimeline = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
-  setFirstName("Anania");
-  setLastName("Shirakaci");
+  const handleName = () => {
+    setFirstName("Anania");
+    setLastName("Shirakaci");
+  };
 
   // Sort stats
   console.log("statsToSort: ", statsToSort);
@@ -32,6 +34,7 @@ const AdoptionTimeline = () => {
   return (
     <Card size="3">
       <Text weight="medium">Adoption timeline</Text>
+      <button onClick={handleName}> Set My Name </button>
       <Flex direction="column" gap="1">
         <Flex gap="2" align="center" justify="between">
           <Text size="1" color="gray">

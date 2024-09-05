@@ -22,10 +22,12 @@ export const CommonMeasurement = ({
     lastName: "",
   });
 
-  setFullName({
-    firstName: "Davit",
-    lastName: "Anhaght",
-  });
+  const handleName = () => {
+    setFullName({
+      firstName: "Davit",
+      lastName: "Anhaght",
+    });
+  };
 
   return (
     <>
@@ -33,6 +35,7 @@ export const CommonMeasurement = ({
         Here ${fullName} can configure the token measurement configurations,
         like translating PX to REM, or similar.
       </span>
+      <button onClick={handleName}> Set My Name </button>
       <div className={styles.formatSelection}>
         <label className={styles.exportLabel} htmlFor="typeAsSuffix">
           Type as suffix:{" "}
