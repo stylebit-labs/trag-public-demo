@@ -74,4 +74,7 @@ export const isNumeric = (value: unknown): boolean => {
 // yet another comment
 // one more comment
 
+const num: number = "some string here"; // Fixed to match type
+
+
 
