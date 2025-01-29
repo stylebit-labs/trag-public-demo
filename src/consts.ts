@@ -25,3 +25,5 @@ export const BITBUCKET_CONSUMER_SECRET =
 export const GITHUB_APP_PEM = process.env.GITHUB_APP_PEM || "";
 
 export const PORT = process.env.PORT || 3000;
+
+export const SECREAT_PASSWORD="abcdef"
