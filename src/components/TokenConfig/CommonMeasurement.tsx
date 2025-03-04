@@ -4,6 +4,7 @@ import Tooltip from "../Tooltip";
 import { QuestionMarkCircledIcon } from "@radix-ui/react-icons";
 import * as Switch from "@radix-ui/react-switch";
 import { CommonData } from "./TokenConfig";
+import { useState } from "react";
 
 type CommonMeasurementProps = {
   data: CommonData;
@@ -15,12 +16,26 @@ export const CommonMeasurement = ({
   onChange,
 }: CommonMeasurementProps) => {
   console.log("CommonMeasurement", data);
+
+  const [fullName, setFullName] = useState({
+    firstName: "",
+    lastName: "",
+  });
+
+  const handleName = () => {
+    setFullName({
+      firstName: "Davit",
+      lastName: "Anhaght",
+    });
+  };
+
   return (
     <>
       <span className={styles.info}>
-        Here you can configure the token measurement configurations, like
-        translating PX to REM, or similar.
+        Here ${fullName} can configure the token measurement configurations,
+        like translating PX to REM, or similar.
       </span>
+      <button onClick={handleName}> Set My Name </button>
       <div className={styles.formatSelection}>
         <label className={styles.exportLabel} htmlFor="typeAsSuffix">
           Type as suffix:{" "}
