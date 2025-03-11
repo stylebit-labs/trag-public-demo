@@ -31,4 +31,5 @@ export const REINDEX2 = "reindex2";
 export const REINDEX3 = "reindex3";
 export const REINDEX4 = "reindex4";
 export const REINDEX5 = "reindex5";
+export const REINDEX6 = "reindex6";
 
